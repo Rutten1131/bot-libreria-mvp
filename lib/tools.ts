@@ -360,6 +360,11 @@ export async function ejecutar(nombre: string, a: any, ctx: Ctx): Promise<any> {
       if (conv?.jid) {
         // Enviar el buffer base64 directamente — más confiable que URL con Evolution API
         await enviarDocumento(conv.jid, pdfBuffer, `Cotizacion-${numero}.pdf`, `📄 Aquí está su cotización ${numero} de Santiago Papelería`);
+        // Registrar el PDF en el hilo de mensajes del CRM para visualización del asesor
+        await exec(
+          "INSERT INTO bot_mensajes (conversacion_id, rol, texto) VALUES (?, 'bot', ?)",
+          [ctx.convId, `📄 [PDF: ${pdfUrl} | Cotizacion-${numero}.pdf | Total: $${(items.reduce((a: number, i: any) => a + i.cantidad * i.precioUnitario, 0) * 1.15).toFixed(2)}]`]
+        );
       }
 
       const totalItems = items.reduce((a: number, i: any) => a + i.cantidad * i.precioUnitario, 0);

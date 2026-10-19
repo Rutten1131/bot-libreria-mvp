@@ -105,6 +105,89 @@ const INTENCION_LABEL: Record<string, string> = {
   "Captura de datos": "Dato del cliente guardado",
 };
 
+/* ─── Renderizado Inteligente de Mensaje (Texto, PDF e Imágenes) ─── */
+function RenderMensajeTexto({ texto }: { texto: string }) {
+  if (!texto) return null;
+
+  // Detección 1: Mensaje con PDF estructurado [PDF: url | nombre | total]
+  const matchPdf = texto.match(/\[PDF:\s*(https?:\/\/[^\s|]+)(?:\s*\|\s*([^|\]]+))?(?:\s*\|\s*([^\]]+))?\]/i);
+  if (matchPdf) {
+    const pdfUrl = matchPdf[1];
+    const pdfNombre = matchPdf[2] ? matchPdf[2].trim() : "Documento-Cotizacion.pdf";
+    const pdfExtra = matchPdf[3] ? matchPdf[3].trim() : "Cotización oficial";
+    const textoPrevio = texto.replace(matchPdf[0], "").trim();
+
+    return (
+      <div>
+        {textoPrevio && <div style={{ marginBottom: "8px" }}>{textoPrevio}</div>}
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="msg-pdf-card">
+          <div className="msg-pdf-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            <span className="msg-pdf-icon-label">PDF</span>
+          </div>
+          <div className="msg-pdf-info">
+            <span className="msg-pdf-title">{pdfNombre}</span>
+            <span className="msg-pdf-sub">{pdfExtra}</span>
+          </div>
+          <span className="msg-pdf-btn">
+            Ver ↗
+          </span>
+        </a>
+      </div>
+    );
+  }
+
+  // Detección 2: Mensaje con Imagen estructurada [IMAGEN: url]
+  const matchImg = texto.match(/\[IMAGEN:\s*(https?:\/\/[^\s\]]+)\]/i);
+  if (matchImg) {
+    const imgUrl = matchImg[1];
+    const textoPrevio = texto.replace(matchImg[0], "").trim();
+    return (
+      <div>
+        {textoPrevio && <div style={{ marginBottom: "8px" }}>{textoPrevio}</div>}
+        <div className="msg-img-container" onClick={() => window.open(imgUrl, "_blank")}>
+          <img src={imgUrl} alt="Imagen enviada" className="msg-img-thumb" loading="lazy" />
+        </div>
+      </div>
+    );
+  }
+
+  // Detección 3: URL suelta de PDF (ej. generada por webhook o asesores)
+  const matchUrlPdf = texto.match(/(https?:\/\/[^\s]+\.pdf(?:\?[^\s]*)?)/i);
+  if (matchUrlPdf) {
+    const pdfUrl = matchUrlPdf[1];
+    const partes = pdfUrl.split("/");
+    const nombreArchivo = decodeURIComponent(partes[partes.length - 1].split("?")[0]) || "Documento.pdf";
+    return (
+      <div>
+        <div style={{ marginBottom: "8px" }}>{texto.replace(pdfUrl, "").trim()}</div>
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="msg-pdf-card">
+          <div className="msg-pdf-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            <span className="msg-pdf-icon-label">PDF</span>
+          </div>
+          <div className="msg-pdf-info">
+            <span className="msg-pdf-title">{nombreArchivo}</span>
+            <span className="msg-pdf-sub">Presiona para abrir documento</span>
+          </div>
+          <span className="msg-pdf-btn">Abrir ↗</span>
+        </a>
+      </div>
+    );
+  }
+
+  return <div>{texto}</div>;
+}
+
 /* ─── Mini Sparkline SVG Component ──────────────────── */
 function Sparkline({ data, color = "#2563eb", height = 36, width = 110 }: { data: number[]; color?: string; height?: number; width?: number }) {
   if (!data || data.length < 2) return null;
@@ -331,75 +414,87 @@ function Dashboard({ metricas }: { metricas: Metricas | null }) {
         </div>
       </div>
 
-      {/* 5 KPI Cards */}
+      {/* 6 KPI Cards Bento Apple */}
       <div className="kpi-glass-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
         <div className="kpi-card glass">
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Total Interacciones</span>
-            <span className="kpi-badge positive">+18% sem</span>
-          </div></div>
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Total Interacciones</span>
+              <span className="kpi-badge positive">Actividad</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
             <div className="kpi-number">{stats.total_conversaciones}</div>
-            <Sparkline data={sparkTotal} color="#3b82f6" />
+            <Sparkline data={sparkTotal} color="#0071e3" />
           </div>
         </div>
 
         <div className="kpi-card glass">
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Leads Registrados</span>
-            <span className="kpi-badge emerald">{tasaLeads}% ratio</span>
-          </div></div>
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Leads Registrados</span>
+              <span className="kpi-badge emerald">{tasaLeads}% ratio</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
             <div className="kpi-number">{stats.leads}</div>
-            <Sparkline data={sparkLeads} color="#10b981" />
+            <Sparkline data={sparkLeads} color="#34c759" />
           </div>
         </div>
 
         <div className="kpi-card glass">
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Resolución Autónoma</span>
-            <span className="kpi-badge purple">{tasaResolucion}% bot</span>
-          </div></div>
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Resolución Autónoma</span>
+              <span className="kpi-badge purple">{tasaResolucion}% bot</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
             <div className="kpi-number">{tasaResolucion}%</div>
-            <CircularDonut percent={tasaResolucion} color="#8b5cf6" size={54} stroke={6} />
+            <CircularDonut percent={tasaResolucion} color="#af52de" size={50} stroke={5} />
           </div>
         </div>
 
-        <div className="kpi-card glass" style={{ borderTop: "2px solid #ec489940" }}>
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Pasó a Administración</span>
-            <span className="kpi-badge amber">{tasaEscalado}% ratio</span>
-          </div></div>
+        <div className="kpi-card glass">
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Pasó a Administración</span>
+              <span className="kpi-badge amber">{tasaEscalado}% ratio</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
             <div className="kpi-number">{totalEscalados}</div>
-            <Sparkline data={sparkEscalados} color="#ec4899" />
+            <Sparkline data={sparkEscalados} color="#ff9500" />
           </div>
         </div>
 
-        <div className="kpi-card glass" style={{ borderTop: "2px solid #10b98140" }}>
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Proformas Generadas</span>
-            <span className="kpi-badge emerald">💰 ventas</span>
-          </div></div>
+        <div className="kpi-card glass">
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Proformas Generadas</span>
+              <span className="kpi-badge emerald">Comercial</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
-            <div className="kpi-number" style={{ color: "#10b981" }}>{stats.proformas ?? 0}</div>
+            <div className="kpi-number" style={{ color: "var(--apple-green)" }}>{stats.proformas ?? 0}</div>
             <CircularDonut
               percent={Math.min(100, Math.round(((stats.proformas ?? 0) / Math.max(1, stats.total_conversaciones)) * 100))}
-              color="#10b981" size={54} stroke={6}
+              color="#34c759" size={50} stroke={5}
               label={`${Math.min(100, Math.round(((stats.proformas ?? 0) / Math.max(1, stats.total_conversaciones)) * 100))}%`}
             />
           </div>
         </div>
 
-        <div className="kpi-card glass" style={{ borderTop: "2px solid #06b6d440" }}>
-          <div className="kpi-top"><div className="kpi-meta">
-            <span className="kpi-title">Pasó a Ventas</span>
-            <span className="kpi-badge" style={{ background: "rgba(6,182,212,0.12)", color: "#06b6d4", border: "1px solid rgba(6,182,212,0.3)" }}>🛒 notificado</span>
-          </div></div>
+        <div className="kpi-card glass">
+          <div className="kpi-top">
+            <div className="kpi-meta">
+              <span className="kpi-title">Pasó a Ventas</span>
+              <span className="kpi-badge positive">Notificado</span>
+            </div>
+          </div>
           <div className="kpi-bottom">
-            <div className="kpi-number" style={{ color: "#06b6d4" }}>{stats.paso_ventas ?? 0}</div>
-            <Sparkline data={sparkEscalados.map((v: number) => Math.max(0, v - 1))} color="#06b6d4" />
+            <div className="kpi-number" style={{ color: "var(--apple-blue)" }}>{stats.paso_ventas ?? 0}</div>
+            <Sparkline data={sparkEscalados.map((v: number) => Math.max(0, v - 1))} color="#0071e3" />
           </div>
         </div>
       </div>
@@ -557,15 +652,27 @@ function Leads({ leads }: { leads: Lead[] | null }) {
                     <td>{datos.correo ?? <span className="suave">—</span>}</td>
                     <td>{datos.ciudad ?? <span className="suave">—</span>}</td>
                     <td>
-                      {l.intencion ? (
-                        <span className="intent-pill" style={{ background: INTENCION_COLOR[l.intencion] ?? "#64748b" }}>
-                          {l.intencion}
-                        </span>
-                      ) : <span className="suave">—</span>}
+                      {l.intencion ? (() => {
+                        const baseColor = INTENCION_COLOR[l.intencion] ?? "#0071e3";
+                        return (
+                          <span
+                            className="intent-pill"
+                            style={{
+                              background: `${baseColor}15`,
+                              color: baseColor,
+                              border: `0.5px solid ${baseColor}30`,
+                            }}
+                          >
+                            <span className="intent-pill-dot" style={{ background: baseColor }} />
+                            <span>{l.intencion}</span>
+                          </span>
+                        );
+                      })() : <span className="suave">—</span>}
                     </td>
                     <td>
                       <span className={`estado-pill ${l.bot_activo ? "bot" : l.estado === "ESCALADO" ? "escalado" : "humano"}`}>
-                        {l.bot_activo ? "Con bot" : l.estado === "ESCALADO" ? "Escalado" : l.estado ?? "—"}
+                        <span className="estado-pill-dot" />
+                        <span>{l.bot_activo ? "Con bot" : l.estado === "ESCALADO" ? "Escalado" : l.estado ?? "—"}</span>
                       </span>
                     </td>
                     <td>{fechaCorta(l.ultimo_msg_en)}</td>
@@ -1382,44 +1489,52 @@ export default function CRM() {
 
   return (
     <div className={`app ${vista !== "chat" ? "vista-completa" : sel != null ? "con-sel" : "sin-sel"}`}>
-      {/* ─── Barra lateral ─── */}
+      {/* ─── Barra lateral macOS ─── */}
       <aside className="lista">
         <div className="lista-top">
-          <h1 className="marca">Santiago</h1>
+          <div className="marca">
+            <span className="marca-badge">S</span>
+            <div className="marca-info">
+              <span className="marca-titulo">Santiago Papelería</span>
+              <span className="marca-sub">Centro de Atención</span>
+            </div>
+          </div>
 
           {/* Navegación principal */}
+          <div className="sidebar-section-label">Vistas</div>
           <div className="nav-vistas" role="navigation">
             <button className="nav-btn" aria-pressed={vista === "chat"} onClick={() => cambiarVista("chat")}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              Chats
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Chats de Clientes</span>
               {esperan > 0 && <span className="nav-badge">{esperan}</span>}
             </button>
             <button className="nav-btn" aria-pressed={vista === "dashboard"} onClick={() => cambiarVista("dashboard")}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-              Dashboard
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>Dashboard Pro</span>
             </button>
             <button className="nav-btn" aria-pressed={vista === "leads"} onClick={() => cambiarVista("leads")}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              Leads
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Leads Registrados</span>
             </button>
             <button className="nav-btn" aria-pressed={vista === "inventario"} onClick={() => cambiarVista("inventario")}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-              Inventario
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+              <span>Catálogo & Stock</span>
             </button>
             <button className="nav-btn" aria-pressed={vista === "imagenes"} onClick={() => cambiarVista("imagenes")}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-              Catálogo Visual
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+              <span>Galería Visual</span>
             </button>
           </div>
 
           {vista === "chat" && (
             <>
-              {/* Buscador de conversaciones */}
+              <div className="sidebar-section-label" style={{ marginTop: 4 }}>Bandeja</div>
+              {/* Buscador de conversaciones estilo Apple */}
               <div className="buscador-chats">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 <input
                   type="text"
-                  placeholder="Buscar por cliente, tel, mensaje..."
+                  placeholder="Buscar cliente o mensaje..."
                   value={busqueda}
                   onChange={(e) => setBusqueda(e.target.value)}
                 />
@@ -1428,16 +1543,18 @@ export default function CRM() {
                 )}
               </div>
 
-              <p className="resumen-dia">
-                {items.length === 0 ? "Aún no hay conversaciones." : esperan > 0
-                  ? <><b>{esperan} {esperan === 1 ? "cliente espera" : "clientes esperan"}</b> a un asesor.</>
-                  : "Nadie está esperando. El asistente va al día."}
-              </p>
-              <div className="tabs" role="group" aria-label="Filtrar conversaciones">
+              {/* Segmented Control para Filtros */}
+              <div className="segmented-control" role="group" aria-label="Filtrar conversaciones">
                 {(([["todos", "Todos"], ["espera", "Esperan"], ["bot", "Bot"], ["asesor", "Asesor"]] as const)).map(([k, l]) => (
-                  <button key={k} className="tab" aria-pressed={filtro === k} onClick={() => setFiltro(k)}>{l}</button>
+                  <button key={k} className="seg-btn" aria-pressed={filtro === k} onClick={() => setFiltro(k)}>{l}</button>
                 ))}
               </div>
+
+              <p className="resumen-dia">
+                {items.length === 0 ? "Sin conversaciones registradas." : esperan > 0
+                  ? <><b>{esperan} {esperan === 1 ? "cliente esperando" : "clientes esperando"}</b> atención inmediata.</>
+                  : "Todos los chats atendidos por el asistente."}
+              </p>
             </>
           )}
         </div>
@@ -1512,7 +1629,9 @@ export default function CRM() {
               {det.mensajes.map((m) => (
                 <div key={m.id} className={`fila ${m.rol}`}>
                   {m.rol !== "cliente" && <span className="quien">{m.rol === "bot" ? "Asistente" : "Asesor"}</span>}
-                  <div className="burbuja">{m.texto}</div>
+                  <div className="burbuja">
+                    <RenderMensajeTexto texto={m.texto} />
+                  </div>
                   <span className="hora">{hora(m.creado_en)}</span>
                 </div>
               ))}
@@ -1540,42 +1659,42 @@ export default function CRM() {
         )}
       </main>
 
-      {/* ─── Panel derecho (ficha del cliente) ─── */}
+      {/* ─── Panel derecho (Inspector macOS / Ficha del cliente) ─── */}
       {vista === "chat" && det && (
         <aside className="ficha">
           {/* Estado del bot */}
           <section>
-            <h3>Estado del bot</h3>
+            <h3>Supervisión del Bot</h3>
             <div className="bot-status">
               <div className={`bot-indicator ${det.conv.bot_activo ? "activo" : "pausado"}`}>
                 <span className="bot-dot" />
-                {det.conv.bot_activo ? "Bot activo — respondiendo" : "Bot pausado — asesor al control"}
+                <span>{det.conv.bot_activo ? "Bot activo (automático)" : "Bot en pausa (asesor al mando)"}</span>
               </div>
               <div className="bot-stats">
-                <span>{det.mensajes.filter(m => m.rol === "bot").length} respuestas del bot</span>
-                <span>{det.mensajes.filter(m => m.rol === "cliente").length} mensajes del cliente</span>
+                <span>• {det.mensajes.filter(m => m.rol === "bot").length} respuestas generadas</span>
+                <span>• {det.mensajes.filter(m => m.rol === "cliente").length} mensajes del cliente</span>
               </div>
             </div>
           </section>
 
           {det.conv.resumen_agente && (
             <section>
-              <h3>Resumen para el asesor</h3>
+              <h3>Resumen Ejecutivo</h3>
               <p>{det.conv.resumen_agente}</p>
             </section>
           )}
 
           {det.conv.motivo_escalamiento && (
             <section>
-              <h3>Por qué pasó a asesor</h3>
+              <h3>Motivo de Escalamiento</h3>
               <p className="escalado-motivo">{det.conv.motivo_escalamiento}</p>
             </section>
           )}
 
           <section>
-            <h3>Lo que sabemos del cliente</h3>
+            <h3>Datos del Contacto</h3>
             <ul className="datos-lista">
-              <li><span className="dato-key">Nombre</span><span>{det.conv.nombre ?? <span className="suave">sin dato</span>}</span></li>
+              <li><span className="dato-key">Nombre</span><span style={{ fontWeight: 600 }}>{det.conv.nombre ?? <span className="suave">sin dato</span>}</span></li>
               {["cedula", "correo", "ciudad"].map((k) => (
                 <li key={k}>
                   <span className="dato-key">{{ cedula: "Cédula", correo: "Correo", ciudad: "Ciudad" }[k]}</span>
@@ -1586,25 +1705,25 @@ export default function CRM() {
           </section>
 
           <section>
-            <h3>Cómo respondió el bot</h3>
-            <p className="traza-hint">Aquí puedes verificar si alucina: si hay datos sin verificar, aparece en rojo.</p>
-            {det.trazas.length === 0 && <p className="suave">Todavía no ha respondido.</p>}
+            <h3>Auditoría de Herramientas & Trazas</h3>
+            <p className="traza-hint">Verificación de veracidad y ejecución de consultas en tiempo real.</p>
+            {det.trazas.length === 0 && <p className="suave">Aún no se registran trazas en este chat.</p>}
             {det.trazas.map((t) => {
               const tl = typeof t.tools_llamadas === "string" ? JSON.parse(t.tools_llamadas) : t.tools_llamadas ?? [];
               return (
                 <div key={t.id} className={`traza ${t.bloqueada ? "freno" : "ok"}`}>
                   <div className="traza-estado">
                     {t.bloqueada
-                      ? <><span className="traza-ico">⛔</span> <b>Respuesta bloqueada</b> — había un dato sin verificar</>
-                      : <><span className="traza-ico">✅</span> Respuesta verificada</>}
+                      ? <><span className="traza-ico">⚠️</span> <b>Intervención de seguridad</b></>
+                      : <><span className="traza-ico">✓</span> Respuesta verificada</>}
                   </div>
                   <div className="traza-detalle">
                     {tl.length
-                      ? "Consultó: " + [...new Set<string>(tl.map((x: any) => x.nombre))].join(", ")
-                      : "Respondió sin consultar herramientas"}
+                      ? "Consultas ejecutadas: " + [...new Set<string>(tl.map((x: any) => x.nombre))].join(", ")
+                      : "Respuesta directa de modelo sin llamada a herramientas"}
                   </div>
                   <div className="traza-meta">
-                    {((t.latencia_ms ?? 0) / 1000).toFixed(1)} s · {t.tokens ?? 0} tokens
+                    {((t.latencia_ms ?? 0) / 1000).toFixed(1)} s latencia · {t.tokens ?? 0} tokens
                   </div>
                 </div>
               );

@@ -388,6 +388,11 @@ export async function procesarConversacion(convId: number) {
       }
       for (const imgUrl of imagenesUnicas) {
         await enviarImagen(conv.jid, imgUrl);
+        // Registrar la imagen enviada en el chat del CRM
+        await exec(
+          "INSERT INTO bot_mensajes (conversacion_id, rol, texto) VALUES (?, 'bot', ?)",
+          [conv.id, `📷 [IMAGEN: ${imgUrl}]`]
+        );
         if (imagenesUnicas.length > 1) await new Promise(r => setTimeout(r, 600));
       }
       if (prodLogs.length > 0 && imagenesUnicas.length === 0) {

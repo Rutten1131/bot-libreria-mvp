@@ -1,0 +1,5 @@
+Trabaja de forma autónoma
+. Trabaja en loop: planifica, construye, prueba, revisa, corrige y repite
+. No me entregues la primera versión
+. Usa un árbitro que emplee técnicas adversariales para auditar y criticar el trabajo hecho hasta [insertar listón o nivel deseado]
+. No uses placeholders ni te detengas en un prototipo básico
