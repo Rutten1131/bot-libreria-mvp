@@ -1,58 +1,27 @@
-# POLÍTICAS, SERVICIOS Y PROMOCIONES — SANTIAGO PAPELERÍA
+# POLÍTICAS, SERVICIOS Y COTIZACIONES — LA REFORMA
 
 ## Formas de Pago
-- **Efectivo:** en todas las tiendas físicas.
-- **Tarjetas bancarias:** Visa, Mastercard, American Express, Diners Club, Discover y Alia (débito y crédito), sin recargo adicional.
-- **Transferencia bancaria o depósito:** disponible para compras online. El comprobante puede enviarse al WhatsApp 0987667459 o al correo ventas@santiagopapeleria.com.
-- **Clientes empresariales:** se procesan retenciones. Consultar al área de Facturación (ext. 0) o a través de facturas@santiagopapeleria.com.
+- **Efectivo:** En cualquiera de las 3 sucursales físicas (Matriz, Zona Militar y Consacola).
+- **Tarjetas bancarias:** Débito y crédito (Visa, Mastercard, etc.) aceptadas en tienda física.
+- **Transferencia bancaria o depósito:** Disponible para compras online, cotizaciones aprobadas y pedidos a distancia.
+- **Clientes corporativos e institucionales:** Se procesan retenciones tributarias legalmente establecidas.
 
 ## Facturación Electrónica
-- Toda compra puede ser emitida con factura electrónica.
-- Indicar RUC o número de cédula al momento de pagar.
-- Para soporte de facturas: facturas@santiagopapeleria.com
+- Toda compra se emite con factura electrónica autorizada por el SRI bajo la razón social LUZUCAM S.A.S. (RUC 1191797444001).
+- El cliente debe facilitar su cédula, RUC, razón social, correo y teléfono al momento de facturar.
 
-## Tienda Online y Ecommerce
-- La tienda online está disponible en megasantiago.com.
-- Proceso: buscar productos → añadir al carrito → ingresar datos → elegir forma de pago → confirmar pedido → recibir comunicación del estado del pedido.
-- Permite consulta de precios y catálogo en línea.
+## Canal Mayorista y Cotizaciones Institucionales
+- La Reforma atiende requerimientos de gran volumen (colegios, empresas, kits escolares por estudiante y papelerías revendedoras).
+- El bot puede armar proformas preliminares basadas en el inventario activo. Si la negociación requiere condiciones especiales de crédito, descuentos mayores o contratos institucionales, se deriva a un asesor comercial humano.
 
-## Servicio a Domicilio y Envíos
-- Santiago Papelería contempla entrega para compras online.
-- Existe una bodega logística ubicada en Azuay y Av. Universitaria, Loja (tel. 096 308 8155) que puede soportar la logística de entrega.
-- Para coordinar envíos o entregas especiales: contactar a ventas@santiagopapeleria.com o al WhatsApp 0987667459.
+## Envíos y Retiro de Pedidos
+- **Retiro en Tienda:** El cliente puede elegir retirar su pedido o cotización en Matriz (18 de Noviembre), Zona Militar (Av. 8 de Diciembre) o Consacola (Av. Pablo Palacio).
+- **Envíos:** Coordinación de envíos en Loja y a nivel provincial/nacional a través de bodega y ventas por WhatsApp: +593 96 944 4795.
 
-## Canal Mayorista
-- Para compras al por mayor para negocios, papelerías, distribuidores o empresas:
-  - WhatsApp mayorista: 0939826491 / 0939522690
-  - Extensión de Compras e importaciones: ext. 113
-- Para cotizaciones mayoristas el bot transfiere directamente a un asesor humano.
+## Tienda Online
+- Sitio oficial: [https://lareforma.ec](https://lareforma.ec)
+- Catálogo en línea: [https://lareforma.ec/shop](https://lareforma.ec/shop)
 
-## Distribución Nacional MAPED
-- Santiago Papelería es distribuidor oficial de MAPED para Ecuador desde 2025.
-- Clientes interesados en distribuir o vender MAPED en su ciudad deben contactar el canal mayorista.
-
-## Promociones Vigentes
-- **Martes y sábados MAPED:** Compras desde $5 en productos MAPED en tiendas físicas pueden ganar premios instantáneos.
-- La tienda online publica promociones en megasantiago.com.
-- Ejemplos de precios promocionales: Bolígrafo Unicornio lentejuela de $0,85 a $0,68. Revisar el ecommerce para promociones actualizadas.
-- *Las promociones aplican según disponibilidad de stock y tienda participante.*
-
-## Política de Devoluciones y Reclamos
-- Los reclamos deben realizarse **dentro de los 5 primeros días** posteriores a la compra.
-- **Se aceptan devoluciones cuando:**
-  - El producto no corresponde a lo facturado.
-  - Se entregó un producto diferente al solicitado.
-  - El producto llegó dañado o defectuoso.
-  - El comprador no recibió el artículo.
-  - Lo recibido es significativamente distinto a lo publicado.
-- **No se aceptan devoluciones de:**
-  - Productos usados.
-  - Productos fuera de su empaque original cuando aplica.
-  - Artículos deteriorados, incompletos o reclamados después de los cinco días.
-- Se recomienda revisar el producto antes de firmar la guía de despacho.
-- Contacto para reclamos: servicios@santiagopapeleria.com
-
-## Empleo
-- Santiago Papelería publica vacantes en LinkedIn y sus plataformas oficiales.
-- Para enviar hojas de vida o consultas de empleo: administracionsantiago@santiagopapeleria.com
-- También se pueden entregar en físico en cualquiera de las tiendas.
+## Política de Devoluciones y Garantías
+- Reclamos por productos defectuosos o discrepancias con la factura deben gestionarse dentro del plazo prudencial comercial (5 días hábiles) presentando la factura de compra correspondiente.
+- Se debe canalizar a través de atención al cliente / WhatsApp oficial: +593 96 944 4795.

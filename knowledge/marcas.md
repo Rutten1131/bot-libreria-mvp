@@ -1,41 +1,29 @@
-# MARCAS, LÍNEAS COMERCIALES Y CATÁLOGO
+# MARCAS, LÍNEAS COMERCIALES Y CATÁLOGO — LA REFORMA
 
-## Líneas de Negocio de Santiago Papelería
+## Líneas de Negocio de La Reforma («Su Empresa Amiga»)
 
-### 1. SANTIAGO PAPELERÍA (Tienda Retail — Formato Autoservicio)
-- **Concepto:** Autoservicio completo de papelería, útiles escolares, oficina, arte, tecnología y bazar.
-- **Categorías principales:**
-  - Útiles escolares: cuadernos, libretas, mochilas, cartucheras, forros, material escolar, marcadores, bolígrafos, borradores, carpetas.
-  - Papelería: papel, cartulina, cartón, carpetas, archivadores, accesorios de escritura, marcadores, sellos.
-  - Oficina: calculadoras, sumadoras, archivadores, sellos, clips, suministros generales.
-  - Arte y arquitectura: pinturas acrílicas, marcadores, material artístico, compases, tableros de dibujo, Rotring, plantillas, origami, guillotinas.
-  - Tecnología: accesorios y periféricos.
-  - Bazar y hogar: regalos, tarjetería, bolsos, bisutería, papel de regalo, juguetes, libros y cuentos.
+### 1. Útiles Escolares y Papelería en General
+- Cuadernos parvularios, universitarios y de materias de reconocidas marcas (Norma, Andaluz, Escribe, Jean Book).
+- Lápices, esferos, borradores, reglas, juegos geométricos, carpetas, forros, cartulinas, papel bond y adhesivos.
 
-### 2. MEGA SANTIAGO (Formato Ampliado)
-- **Ubicación:** 18 de Noviembre entre Azuay y Miguel Riofrío, Loja.
-- **Teléfono:** 098 766 7459
-- **Concepto:** Expansión del negocio con nuevas categorías: mascotas, hogar, cumpleaños, regalos, además de toda la papelería tradicional.
+### 2. Suministros de Oficina y Computación
+- Archivadores, folders palanca, perforadoras, grapadoras, papel continuo, resmas de papel bond INEN y A4, accesorios de escritorio y suministros de cómputo para empresas.
 
-### 3. CREANDO (Marca Propia)
-- Lanzada en 2016. Línea de productos bajo marca propia de Santiago Papelería.
+### 3. Arte, Dibujo y Manualidades
+- Acuarelas, témperas, pinturas acrílicas, pinceles, lienzos, marcadores punta pincel, materiales creativos y dibujo técnico.
 
-### 4. Canal Mayorista
-- Santiago Papelería vende al por mayor a negocios, papelerías y distribuidores.
-- Contacto mayorista: 0939826491 / 0939522690
-- También disponible a través del ecommerce (megasantiago.com).
+### 4. Materiales para Imprenta
+- Papeles especiales, cartulinas gráficas e insumos para el sector de imprenta y diseño gráfico.
 
-### 5. MAPED — Distribución Nacional
-- Desde 2025, Santiago Papelería es **distribuidor oficial de MAPED para todo Ecuador**.
-- MAPED es una empresa francesa líder en artículos escolares y de oficina.
-- Promoción especial: martes y sábados, compras desde $5 en productos MAPED pueden recibir premios instantáneos en tiendas físicas.
-- Clientes interesados en distribuir MAPED deben contactar al canal mayorista.
+### 5. Bazar, Hogar y Variedades
+- Artículos para regalos, cartucheras, mochilas, detalles de bazar y artículos complementarios.
+
+### 6. Canal Mayorista e Institucional
+- Atención a papelerías de Loja y provincias vecinas (El Oro, Zamora Chinchipe), colegios, escuelas, universidades e instituciones públicas/privadas.
+- Armado de kits escolares a medida por presupuesto por estudiante.
 
 ## Marcas Comercializadas
-Entre las marcas disponibles en Santiago Papelería se encuentran:
-BIC, Faber-Castell, Pelikan, Artesco, Maped, Stabilo, Staedtler, Rotring, Lancer, Nataraj, Giotto, Sharpie, Andaluz, Escribe, Krafty Kids y otras.
+Norma, Staedtler, Pelikan, Faber-Castell, Artesco, BIC, Stabilo, Rotring, Lancer, Andaluz, Escribe y más marcas líderes del mercado nacional e internacional.
 
-## Puntos Universitarios
-Santiago Papelería también tiene presencia en:
-- Almacén Universitario UTPL
-- Almacén Universitario UIDE
+## Tienda Online
+Catálogo web interactivo disponible en [lareforma.ec](https://lareforma.ec/shop), permitiendo consultar referencias, categorías y precios vigentes.

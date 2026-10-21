@@ -1,36 +1,24 @@
-# SUCURSALES Y PUNTOS DE VENTA — SANTIAGO PAPELERÍA
+# SUCURSALES Y PUNTOS DE ATENCIÓN — LA REFORMA
 
-Santiago Papelería opera múltiples puntos en Loja, Ecuador.
+La Reforma cuenta con 3 puntos de atención estratégicos en Loja, Ecuador:
 
-## Puntos de Venta Confirmados
+## Puntos de Atención Confirmados
 
-### 1. Santiago Papelería — Matriz
-- **Dirección:** Azuay 152-48 entre 18 de Noviembre y Avenida Universitaria, Loja.
-- **Teléfono:** (07) 257-3358
-- **Horario:** Por confirmar directamente con la tienda.
-- **Formato:** Autoservicio integral de papelería, útiles escolares, oficina, arte y bazar.
+### 1. La Reforma — Matriz
+- **Dirección:** Av. 18 de Noviembre entre Mercadillo y Lourdes, Loja, Ecuador.
+- **Horario:** Lunes a sábado de 08:30 a 19:30.
+- **Formato:** Tienda principal con autoservicio y atención en mostrador de papelería, útiles escolares, oficina, arte, imprenta y bazar.
 
-### 2. Mega Santiago
-- **Dirección:** 18 de Noviembre entre Azuay y Miguel Riofrío, Loja.
-- **Teléfono:** 098 766 7459
-- **Formato:** Concepto ampliado que incorpora mascotas, hogar, cumpleaños, regalos, además de toda la papelería.
+### 2. La Reforma — Sucursal Zona Militar
+- **Dirección:** Av. 8 de Diciembre y Guayaquil, Loja, Ecuador.
+- **Horario:** Lunes a viernes de 08:30 a 19:30; sábados de 08:30 a 13:30.
+- **Formato:** Punto de atención para escolares, universitarios, familias y suministros rápidos.
 
-### 3. Almacén Universitario UTPL
-- **Ciudad:** Loja
-- **Formato:** Punto de venta vinculado a la Universidad Técnica Particular de Loja.
+### 3. La Reforma — Sucursal Consacola
+- **Dirección:** Av. Pablo Palacio, frente al Redondel del Libro, Loja, Ecuador.
+- **Horario:** Lunes a viernes de 08:30 a 19:30; sábados de 08:30 a 13:30.
+- **Formato:** Punto de venta y despacho estratégico hacia el sector norte.
 
-### 4. Almacén Universitario UIDE
-- **Ciudad:** Loja
-- **Formato:** Punto de venta vinculado a la UIDE.
-
-### 5. Punto Calle Guaranda y Avenida Cuxibamba
-- **Dirección:** Guaranda y Av. Cuxibamba, Loja.
-- **Nota:** Verificar disponibilidad y horario directamente.
-
-### 6. Bodega Santiago Papelería
-- **Dirección:** Sector Azuay y Av. Universitaria, Loja.
-- **Teléfono:** 096 308 8155
-- **Función:** Infraestructura logística y bodegaje.
-
-## Nota para el bot
-Los horarios exactos y la disponibilidad de inventario por sucursal pueden variar. Para información precisa de stock en tienda física o coordinación de entrega, se recomienda consultar directamente con un asesor humano.
+## Retiro de Pedidos y Logística
+- Los clientes pueden coordinar el retiro de sus cotizaciones o compras en cualquiera de las 3 sucursales según su conveniencia (Matriz, Zona Militar o Consacola).
+- Para despacho a domicilio o envíos fuera de Loja, se coordina a través de bodega y ventas por WhatsApp: +593 96 944 4795.

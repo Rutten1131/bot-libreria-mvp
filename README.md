@@ -1,4 +1,4 @@
-# Asistente de WhatsApp para Santiago Papelería (MVP)
+# Asistente de WhatsApp para La Reforma — Su Empresa Amiga (MVP)
 
 Next.js + TypeScript + MySQL + Evolution API + Gemini + Inngest. Incluye el bot con catálogo completo, el CRM con gestión de inventario y un simulador de chat.
 

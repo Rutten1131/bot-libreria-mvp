@@ -399,7 +399,7 @@ function Dashboard({ metricas }: { metricas: Metricas | null }) {
       {/* Header glassmorphism */}
       <div className="dash-hero-header">
         <div>
-          <h1 className="dash-main-title">Panel de Control Santiago Papelería</h1>
+          <h1 className="dash-main-title">Panel de Control La Reforma</h1>
           <p className="dash-subtitle">Monitoreo en tiempo real de interacciones, conversiones e intenciones de clientes.</p>
         </div>
         <div className="dash-quick-pills">
@@ -1493,9 +1493,9 @@ export default function CRM() {
       <aside className="lista">
         <div className="lista-top">
           <div className="marca">
-            <span className="marca-badge">S</span>
+            <span className="marca-badge">R</span>
             <div className="marca-info">
-              <span className="marca-titulo">Santiago Papelería</span>
+              <span className="marca-titulo">La Reforma</span>
               <span className="marca-sub">Centro de Atención</span>
             </div>
           </div>

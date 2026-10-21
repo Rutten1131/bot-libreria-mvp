@@ -9,12 +9,12 @@ const EMP = { type: "STRING", enum: ["santiago"], description: "Empresa. Omitir 
 export const declaraciones = [
   {
     name: "buscar_sucursales",
-    description: "Busca sucursales de Santiago Papelería con dirección, teléfono y horario de atención. Úsala para CUALQUIER pregunta de ubicación u horario.",
+    description: "Busca sucursales de La Reforma con dirección, teléfono y horario de atención. Úsala para CUALQUIER pregunta de ubicación u horario.",
     parameters: {
       type: "OBJECT",
       properties: {
         ciudad: { type: "STRING", description: "Ej. Loja" },
-        nombre: { type: "STRING", description: "Parte del nombre o sector, ej. Matriz, Mega Santiago, UTPL" },
+        nombre: { type: "STRING", description: "Parte del nombre o sector, ej. Matriz, Zona Militar, Consacola" },
         empresa: EMP,
       },
     },
@@ -26,23 +26,23 @@ export const declaraciones = [
   },
   {
     name: "buscar_producto",
-    description: "Busca productos en el catálogo de Santiago Papelería por nombre, código o categoría y devuelve precio y disponibilidad.",
+    description: "Busca productos en el catálogo de La Reforma por nombre, código o categoría y devuelve precio y disponibilidad.",
     parameters: {
       type: "OBJECT",
-      properties: { texto: { type: "STRING", description: "Producto, código o categoría, ej. cuaderno, BIC, compás Maped, cartulina, mochila" }, empresa: EMP },
+      properties: { texto: { type: "STRING", description: "Producto, código o categoría, ej. cuaderno, BIC, cartulina, mochila, resma" }, empresa: EMP },
       required: ["texto"],
     },
   },
   {
     name: "buscar_conocimiento",
-    description: "Consulta documentos oficiales de Santiago Papelería: información corporativa (historia, RUC, fundadores), líneas de negocio (Santiago Papelería, Mega Santiago, CREANDO, MAPED), sucursales, políticas de pago, devoluciones, delivery y servicios.",
+    description: "Consulta documentos oficiales de La Reforma: información corporativa (historia desde 1979, RUC, lema 'Su Empresa Amiga'), líneas de catálogo, sucursales (Matriz, Zona Militar, Consacola), políticas de pago, facturación y compras mayoristas/institucionales.",
     parameters: {
       type: "OBJECT",
       properties: {
         tema: {
           type: "STRING",
           enum: ["empresa", "marcas", "sucursales", "politicas_servicios"],
-          description: "Tema a consultar: 'empresa' (historia, RUC, fundadores, estructura), 'marcas' (Santiago Papelería, Mega Santiago, CREANDO, MAPED, líneas comerciales), 'sucursales' (puntos de venta y direcciones), 'politicas_servicios' (pagos, devoluciones, delivery, ecommerce, facturación, mayorista).",
+          description: "Tema a consultar: 'empresa' (historia, RUC, equipo, departamentos), 'marcas' (líneas comerciales y catálogo), 'sucursales' (puntos de atención y horarios), 'politicas_servicios' (pagos, devoluciones, retenciones, mayorista e institucional).",
         },
       },
       required: ["tema"],
@@ -84,7 +84,7 @@ export const declaraciones = [
   },
   {
     name: "generar_cotizacion_pdf",
-    description: "Genera una proforma/cotización formal en PDF con membrete corporativo de Santiago Papelería y la envía al WhatsApp del cliente. Úsala cuando el cliente solicita una cotización, presupuesto o lista de materiales y ya identificaste los productos y cantidades.",
+    description: "Genera una proforma/cotización formal en PDF con membrete corporativo de La Reforma — Su Empresa Amiga y la envía al WhatsApp del cliente. Úsala cuando el cliente solicita una cotización, presupuesto o lista de materiales y ya identificaste los productos y cantidades.",
     parameters: {
       type: "OBJECT",
       properties: {
@@ -359,7 +359,7 @@ export async function ejecutar(nombre: string, a: any, ctx: Ctx): Promise<any> {
       const [conv] = await q<any>("SELECT c.telefono AS jid FROM bot_contactos c JOIN bot_conversaciones cv ON cv.contacto_id = c.id WHERE cv.id=?", [ctx.convId]);
       if (conv?.jid) {
         // Enviar el buffer base64 directamente — más confiable que URL con Evolution API
-        await enviarDocumento(conv.jid, pdfBuffer, `Cotizacion-${numero}.pdf`, `📄 Aquí está su cotización ${numero} de Santiago Papelería`);
+        await enviarDocumento(conv.jid, pdfBuffer, `Cotizacion-${numero}.pdf`, `📄 Aquí está su cotización ${numero} de La Reforma — Su Empresa Amiga`);
         // Registrar el PDF en el hilo de mensajes del CRM para visualización del asesor
         await exec(
           "INSERT INTO bot_mensajes (conversacion_id, rol, texto) VALUES (?, 'bot', ?)",

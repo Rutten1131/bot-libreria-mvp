@@ -1,36 +1,27 @@
-# SANTIAGO PAPELERÍA
+# LA REFORMA — SU EMPRESA AMIGA
 
 ## Identidad Comercial
-- **Nombre comercial:** Santiago Papelería
-- **Concepto ampliado:** Mega Santiago
-- **RUC:** 1102021464
-- **Representante histórico:** Julio César Luna Cruz y Rosemary Alejandro Matamoros
-- **Actividad:** Comercialización de útiles escolares, papelería, suministros de oficina, tecnología, artículos de arte, manualidades, bazar, hogar y regalos.
-- **Matriz:** Azuay 152-48 entre 18 de Noviembre y Avenida Universitaria, Loja, Ecuador.
-- **Teléfono principal:** (07) 257-3358
-- **WhatsApp (ventas al por menor):** 0987667459
-- **WhatsApp / teléfono mayorista:** 0939826491 / 0939522690
-- **Correo ventas:** ventas@santiagopapeleria.com
-- **Correo facturación:** facturas@santiagopapeleria.com
-- **Correo servicios/reclamos:** servicios@santiagopapeleria.com
-- **Sitio web oficial:** santiagopapeleria.com
-- **Tienda online:** megasantiago.com
+- **Nombre comercial:** La Reforma — Su Empresa Amiga
+- **Razón Social:** LUZUCAM S.A.S.
+- **RUC:** 1191797444001
+- **Lema:** «Su Empresa Amiga»
+- **Actividad:** Comercialización al por mayor y menor de papelería en general, útiles escolares, suministros de oficina y computación, materiales para imprenta, arte, manualidades y bazar.
+- **Equipo Humano:** Aproximadamente 50 colaboradores distribuidos en áreas administrativas, financieras, jurídicas, ventas, bodega y despacho.
+- **Matriz:** Av. 18 de Noviembre entre Mercadillo y Lourdes, Loja, Ecuador.
+- **WhatsApp Oficial / Ventas:** +593 96 944 4795
+- **Sitio web oficial / Tienda online:** [https://lareforma.ec](https://lareforma.ec)
 
 ## Historia Empresarial
-- **1980:** Nace Gráficas Santiago el 25 de junio, en la Calle Sucre entre Azuay y Mercadillo, Loja. Inicio como imprenta con comercialización de artículos de papelería.
-- **1987:** Julio César Luna Cruz y Rosemary Alejandro Matamoros adquieren la sección de papelería y el nombre comercial, desarrollando el negocio de papelería.
-- **2016:** Lanzamiento de la marca propia **CREANDO**.
-- **2018:** Reinauguración como **Santiago Papelería** — primer autoservicio de papelería de Loja.
-- **2024:** Apertura de **Mega Santiago**, nuevo concepto que incorpora mascotas, hogar y cumpleaños.
-- **2025:** Santiago Papelería se convierte en **distribuidor oficial de MAPED para todo Ecuador**.
-- **Actualidad:** Opera tiendas físicas, tienda online (megasantiago.com) y canal mayorista.
+- **1979:** Nace La Reforma en Loja con establecimientos en el centro de la ciudad y en el sector de la avenida 8 de Diciembre.
+- **2002:** Amplía su matriz e incorpora una línea completa de bazar.
+- **2024:** Consolidación societaria como LUZUCAM S.A.S. continuando con la tradición comercial de "La Reforma Su Empresa Amiga".
+- **Trayectoria:** Más de 45 años de historia sirviendo a estudiantes, familias, profesionales, instituciones educativas y empresas de Loja y la región sur del Ecuador.
 
-## Posicionamiento
-Santiago Papelería es una de las papelerías más completas de Loja con más de 40 años de trayectoria. Cuenta con aproximadamente 938 reseñas y calificación de 4,6/5 en Google Maps. Se destaca por su modelo de autoservicio, amplia variedad de productos y presencia tanto en retail como en canal mayorista y distribución nacional.
+## Posicionamiento y Propuesta de Valor
+La Reforma combina variedad integral, calidad, descuentos por volumen y precios competitivos. Destaca por su robusto catálogo online y su capacidad de abastecimiento tanto para compras minoristas inmediatas como para grandes pedidos institucionales y mayoristas.
 
-## Estructura Interna (Extensiones)
-- Facturación: ext. 0
-- Compras e Importaciones: ext. 113
-- Contabilidad: ext. 109
-- Finanzas: ext. 116
-- Administración: ext. 110
+## Departamentos y Estructura Operativa
+- Ventas al por menor (mostrador y WhatsApp)
+- Ventas al por mayor e institucionales (cotizaciones para empresas, colegios y papelerías)
+- Bodega y Despacho centralizado
+- Administración y Finanzas (gestión de facturación electrónica y retenciones)

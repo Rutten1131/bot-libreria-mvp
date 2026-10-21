@@ -247,7 +247,7 @@ export async function generar(body: Record<string, any>) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${openRouterKey}`,
         "HTTP-Referer": process.env.APP_URL || "https://santiago-papeleria.vercel.app",
-        "X-Title": "Santiago Papeleria Bot MVP",
+        "X-Title": "La Reforma Bot MVP",
       },
       body: JSON.stringify(orBody),
       signal: orCtrl.signal,

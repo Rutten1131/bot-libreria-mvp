@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = { title: "Atención al cliente | Santiago Papelería" };
+export const metadata: Metadata = { title: "Atención al cliente | La Reforma — Su Empresa Amiga" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

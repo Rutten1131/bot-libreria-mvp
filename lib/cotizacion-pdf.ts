@@ -31,11 +31,11 @@ function dibujarEncabezado(page: any, fontBold: any, fontReg: any, numero: strin
   y -= 26;
 
   // Nombre empresa
-  page.drawText("SANTIAGO PAPELERÍA", { x: 40, y, size: 22, font: fontBold, color: OSCURO });
-  page.drawText("RUC: 1190000000001  ·  Azuay 152-48 entre 18 de Noviembre y Av. Universitaria, Loja, Ecuador", {
+  page.drawText("LA REFORMA — Su Empresa Amiga", { x: 40, y, size: 20, font: fontBold, color: OSCURO });
+  page.drawText("LUZUCAM S.A.S.  ·  RUC: 1191797444001  ·  Av. 18 de Noviembre e/ Mercadillo y Lourdes, Loja", {
     x: 40, y: y - 16, size: 7.5, font: fontReg, color: GRIS,
   });
-  page.drawText("Tel: (07) 257-3358  ·  WhatsApp: 0987667459  ·  ventas@santiagopapeleria.com", {
+  page.drawText("WhatsApp: +593 96 944 4795  ·  Sitio web: lareforma.ec", {
     x: 40, y: y - 27, size: 7.5, font: fontReg, color: GRIS,
   });
 
@@ -102,7 +102,7 @@ function dibujarCondiciones(page: any, fontBold: any, fontReg: any, y: number): 
   // Línea de firma
   const yFirma = y - 80;
   page.drawLine({ start: { x: 40, y: yFirma }, end: { x: 200, y: yFirma }, color: OSCURO, thickness: 0.8 });
-  page.drawText("Santiago Papelería", { x: 40, y: yFirma - 12, size: 8, font: fontBold, color: OSCURO });
+  page.drawText("La Reforma — Su Empresa Amiga", { x: 40, y: yFirma - 12, size: 8, font: fontBold, color: OSCURO });
   page.drawText("Autorizado por", { x: 40, y: yFirma - 22, size: 7.5, font: fontReg, color: GRIS });
 
   return yFirma - 30;
@@ -110,7 +110,7 @@ function dibujarCondiciones(page: any, fontBold: any, fontReg: any, y: number): 
 
 function dibujarPie(page: any, fontReg: any, width: number) {
   page.drawText(
-    "Generado automáticamente por el asistente virtual de Santiago Papelería  ·  Gracias por su preferencia.",
+    "Generado automáticamente por el asistente virtual de La Reforma — Su Empresa Amiga  ·  Gracias por su preferencia.",
     { x: 40, y: 16, size: 6.5, font: fontReg, color: rgb(0.620, 0.690, 0.770) }
   );
 }

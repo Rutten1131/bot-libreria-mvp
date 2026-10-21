@@ -1,6 +1,5 @@
--- DATOS DEMO Santiago Papelería.
--- Sucursales e info basada en investigación pública oficial.
--- Promociones, precios y stock son DEMO para el MVP.
+-- DATOS OFICIALES La Reforma — Su Empresa Amiga (Loja, Ecuador)
+-- Basado en información corporativa, puntos de atención y catálogo.
 SET NAMES utf8mb4;
 
 DELETE FROM bot_sucursales;
@@ -8,37 +7,33 @@ DELETE FROM bot_promociones;
 DELETE FROM bot_faqs;
 DELETE FROM bot_config;
 
--- ---------- SUCURSALES ----------
+-- ---------- SUCURSALES (3 puntos de atención oficiales en Loja) ----------
 INSERT INTO bot_sucursales (empresa, nombre, direccion, ciudad, telefono, horario) VALUES
-('santiago','Santiago Papelería Matriz','Azuay 152-48 entre 18 de Noviembre y Av. Universitaria','Loja','(07) 257-3358','{"lun-sab":"09:00-19:00","dom":"09:00-14:00"}'),
-('santiago','Mega Santiago','18 de Noviembre entre Azuay y Miguel Riofrío','Loja','098 766 7459','{"lun-sab":"09:00-19:00","dom":"09:00-14:00"}'),
-('santiago','Almacén Universitario UTPL','Campus UTPL, Loja','Loja',NULL,'{"lun-vie":"08:00-18:00","sab":"08:00-13:00"}'),
-('santiago','Almacén Universitario UIDE','Campus UIDE, Loja','Loja',NULL,'{"lun-vie":"08:00-18:00","sab":"08:00-13:00"}'),
-('santiago','Bodega Santiago Papelería','Azuay y Av. Universitaria, Loja','Loja','096 308 8155','{"lun-vie":"08:00-17:00"}');
+('santiago','La Reforma — Matriz','Av. 18 de Noviembre entre Mercadillo y Lourdes','Loja','+593 96 944 4795','{"lun-sab":"08:30-19:30","dom":null}'),
+('santiago','La Reforma — Sucursal Zona Militar','Av. 8 de Diciembre y Guayaquil','Loja','+593 96 944 4795','{"lun-vie":"08:30-19:30","sab":"08:30-13:30","dom":null}'),
+('santiago','La Reforma — Sucursal Consacola','Av. Pablo Palacio, frente al Redondel del Libro','Loja','+593 96 944 4795','{"lun-vie":"08:30-19:30","sab":"08:30-13:30","dom":null}');
 
--- ---------- PROMOCIONES DEMO ----------
+-- ---------- PROMOCIONES VIGENTES ----------
 INSERT INTO bot_promociones (empresa, titulo, descripcion, desde, hasta) VALUES
-('santiago','Martes y Sábados MAPED','Compras desde $5 en productos MAPED en tiendas físicas participan en premios instantáneos.','2026-01-01','2026-12-31'),
-('santiago','Bolígrafo Unicornio Lentejuela','De $0,85 a $0,68. Disponible en tiendas físicas.','2026-09-01','2026-12-31'),
-('santiago','Palillo Madera Krafty Kids','De $2,10 a $1,89. Disponible en tiendas físicas.','2026-09-01','2026-12-31'),
-('santiago','Sin recargo con tarjeta','Pago con tarjetas Visa, Mastercard, American Express, Diners, Discover y Alia sin recargo adicional.','2026-01-01','2026-12-31');
+('santiago','Descuento Institucional y Escolar','Precios preferenciales y armado de kits escolares a medida para colegios, escuelas e instituciones.','2026-01-01','2026-12-31'),
+('santiago','Compras Mayoristas','Precios especiales al por mayor para papelerías y negocios de Loja y provincias vecinas.','2026-01-01','2026-12-31'),
+('santiago','Pago sin recargo','Aceptamos efectivo, transferencias bancarias y tarjetas de crédito o débito sin recargo en tienda física.','2026-01-01','2026-12-31');
 
 -- ---------- FAQS ----------
 INSERT INTO bot_faqs (empresa, tema, pregunta, respuesta) VALUES
-('santiago','pagos','¿Qué formas de pago aceptan?','Aceptamos efectivo, tarjetas de crédito y débito (Visa, Mastercard, American Express, Diners Club, Discover y Alia) sin recargo. Para compras online también se acepta transferencia bancaria y depósito.'),
-('santiago','factura','¿Emiten factura con datos?','Sí. Indique su cédula o RUC al momento de pagar y emitimos factura electrónica. Para facturación online: facturas@santiagopapeleria.com'),
-('santiago','domicilio','¿Hacen entregas a domicilio?','Para compras en nuestra tienda online (megasantiago.com) contemplamos entrega. Para coordinar entregas o pedidos especiales, puede contactarnos al 0987667459 o escribirnos a ventas@santiagopapeleria.com.'),
-('santiago','mayorista','¿Venden al por mayor?','Sí, tenemos canal mayorista para negocios, papelerías y distribuidores. Contáctenos al 0939826491 o 0939522690. También puede gestionar un asesor por este chat.'),
-('santiago','maped','¿Son distribuidores de MAPED?','Sí, desde 2025 somos distribuidores oficiales de MAPED para todo Ecuador. Para información mayorista sobre MAPED, contáctenos al canal mayorista.'),
-('santiago','empleo','¿Cómo trabajar con Santiago Papelería?','Puede enviar su hoja de vida a administracionsantiago@santiagopapeleria.com o entregarla en cualquiera de nuestras tiendas. También publicamos vacantes en LinkedIn.'),
-('santiago','devolucion','¿Cuál es la política de devoluciones?','Los reclamos deben hacerse dentro de los 5 primeros días de la compra. Aceptamos devoluciones si el producto no corresponde a lo facturado, llegó dañado o es diferente a lo publicado. Contáctenos en servicios@santiagopapeleria.com.'),
-('santiago','horario','¿Cuál es el horario de atención?','Santiago Papelería Matriz y Mega Santiago atienden de lunes a sábado aproximadamente de 09:00 a 19:00. Domingos de 09:00 a 14:00. Los puntos universitarios atienden de lunes a viernes. Confirme el horario exacto llamando a la sucursal.'),
-('santiago','envio','¿Hacen envíos a otras ciudades?','Sí, através de nuestra tienda online megasantiago.com realizamos envíos. Para consultar disponibilidad de envío a su ciudad, puede escribirnos al 0987667459.'),
-('santiago','catalogo','¿Dónde veo el catálogo completo?','Nuestro catálogo completo está disponible en la tienda online megasantiago.com con aproximadamente 940 productos indexados.'),
-('santiago','contacto','¿Cuál es su teléfono de contacto?','Teléfono principal: (07) 257-3358. WhatsApp ventas al por menor: 0987667459. Mayoristas: 0939826491 o 0939522690.'),
-('santiago','tiendaonline','¿Tienen tienda online?','Sí, puede comprar en megasantiago.com. Búsqueda de productos, carrito, pago con tarjeta o transferencia, y seguimiento del pedido.');
+('santiago','identidad','¿Qué es La Reforma?','La Reforma es una empresa comercial con más de 45 años de historia (fundada en 1979 en Loja) conocida bajo el lema «Su Empresa Amiga». Ofrece soluciones integrales en papelería, útiles escolares, oficina, arte, materiales de imprenta y bazar.'),
+('santiago','sucursales','¿Dónde están ubicadas las sucursales de La Reforma?','Contamos con 3 puntos en Loja: 1) Matriz: Av. 18 de Noviembre entre Mercadillo y Lourdes. 2) Sucursal Zona Militar: Av. 8 de Diciembre y Guayaquil. 3) Sucursal Consacola: Av. Pablo Palacio frente al Redondel del Libro.'),
+('santiago','horario','¿Cuál es el horario de atención?','Matriz atiende de lunes a sábado de 08:30 a 19:30. Las sucursales Zona Militar y Consacola atienden de lunes a viernes de 08:30 a 19:30 y sábados de 08:30 a 13:30.'),
+('santiago','pagos','¿Qué formas de pago aceptan?','Aceptamos efectivo en tiendas físicas, tarjetas de crédito/débito y transferencias bancarias o depósitos para pedidos a distancia y proformas aprobadas.'),
+('santiago','factura','¿Emiten factura con RUC?','Sí, emitimos facturas electrónicas autorizadas por el SRI (LUZUCAM S.A.S. - RUC 1191797444001). Procesamos retenciones para clientes corporativos.'),
+('santiago','domicilio','¿Hacen entregas o envíos?','Sí, coordinamos entregas y despachos tanto en Loja como a nivel interprovincial a través de nuestra bodega y WhatsApp oficial: +593 96 944 4795.'),
+('santiago','retiro','¿Puedo retirar en cualquier sucursal?','Sí, puede coordinar el retiro de su cotización o compra en la sucursal que más le convenga: Matriz, Zona Militar o Consacola.'),
+('santiago','mayorista','¿Venden al por mayor o para colegios?','Sí, contamos con un equipo especializado para atención mayorista a instituciones educativas, empresas y papelerías. Armamos kits escolares a medida por presupuesto.'),
+('santiago','catalogo','¿Dónde veo el catálogo completo?','Puede consultar nuestro catálogo y tienda online en lareforma.ec/shop o consultarnos directamente por este chat.'),
+('santiago','contacto','¿Cuál es su número de WhatsApp oficial?','Nuestro WhatsApp oficial de atención es +593 96 944 4795.'),
+('santiago','tiendaonline','¿Tienen página web?','Sí, visite nuestro sitio web oficial en lareforma.ec.');
 
 -- ---------- CONFIG ----------
 INSERT INTO bot_config (clave, valor) VALUES
-('horario_asesores','{"zona":"America/Guayaquil","lun-sab":["09:00","19:00"],"dom":null}'),
-('mensaje_fuera_horario','"Nuestros asesores atienden de lunes a sábado de 09:00 a 19:00. Le responderemos al inicio de la próxima jornada."');
+('horario_asesores','{"zona":"America/Guayaquil","lun-sab":["08:30","19:30"],"dom":null}'),
+('mensaje_fuera_horario','"Nuestros asesores atienden de lunes a sábado de 08:30 a 19:30. Le responderemos al inicio de la próxima jornada laboral."');
